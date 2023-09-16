@@ -50,12 +50,13 @@ resource "aws_instance" "myec2" {
   }
 }
 
+/*
 resource "aws_volume_attachment" "ebs_att" {
   device_name = "xvdf"
   volume_id   = aws_ebs_volume.New_Volume.id
   instance_id = aws_instance.myec2.id
 }
-
+*/
 
   output "vpc_id" {
     value = aws_vpc.main.id
@@ -65,3 +66,4 @@ resource "aws_volume_attachment" "ebs_att" {
     value = aws_ebs_volume.New_Volume.id
   }
 
+ 
