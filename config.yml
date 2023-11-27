@@ -1,0 +1,19 @@
+stages:
+- initialize-and-plan
+- apply
+
+terraform-plan:
+  allow_failure: false
+  stage: initialize-and-plan
+  script:
+    - terraform init
+    - terraform plan 
+    - exit 0
+
+Deploy:
+  stage: apply
+  when: manual
+  script:
+  - terraform init
+  - terraform apply 
+  - terraform state list
